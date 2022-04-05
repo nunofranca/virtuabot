@@ -23,6 +23,6 @@ class LoginController extends Controller
         if (!Auth::attempt($credentials))
             return redirect()->back();
 
-        return redirect()->intended('dashboard');
+        return redirect()->intended(route('dashboard'));
     }
 }
