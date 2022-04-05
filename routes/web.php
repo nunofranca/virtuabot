@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/login', [LoginController::class, 'formLogin'])->name('login');
 Route::get('/', [LoginController::class, 'formLogin'])->name('login');
+
 Route::post('/login', [LoginController::class, 'authenticate'])->name('authenticate');
 
 Route::middleware('auth')->prefix('painel')->group(function (){
