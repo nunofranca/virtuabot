@@ -14,7 +14,7 @@
         <div class="row mb-4">
             <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
                 <x-Dashboard.LatestScoresComponents/>
-                <x-Dashboard.NextScoresComponents/>
+                <x-Dashboard.NextDuelsComponents/>
             </div>
             <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
                 <x-Dashboard.LatestEntriesComponents/>
