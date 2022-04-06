@@ -2,18 +2,21 @@
 
 namespace App\View\Components\Dashboard;
 
+use App\Services\Duel\DuelServiceInterface;
 use Illuminate\View\Component;
 
-class NextScoresComponents extends Component
+class NextDuelsComponents extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public $duels;
+
+    public function __construct(DuelServiceInterface $duelService)
     {
-        //
+        $this->duels = $duelService->nextDuels();
     }
 
     /**
@@ -23,6 +26,6 @@ class NextScoresComponents extends Component
      */
     public function render()
     {
-        return view('components.dashboard.next-scores-components');
+        return view('components.dashboard.next-duels-components');
     }
 }

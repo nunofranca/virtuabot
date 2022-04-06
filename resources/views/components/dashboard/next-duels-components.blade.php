@@ -42,22 +42,24 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($duels as $duel)
                     <tr>
                         <td>
                             <div class="d-flex px-2 py-1">
                                 <div>
-                                    <h6 class="mb-0 text-sm">Brasil X França</h6>
+                                    <h6 class="mb-0 text-sm">{{$duel->clubHome}} x {{$duel->clubVisit}}</h6>
                                 </div>
 
                             </div>
                         </td>
                         <td>
-                            <h6 class="mb-0 text-sm">27/02/2020 - 19:30</h6>
+                            <h6 class="mb-0 text-sm">{{\Carbon\Carbon::parse($duel->dateHour)->format('d/m/y - H:i')}}</h6>
                         </td>
                         <td class="align-middle text-center text-sm">
-                            <span class="text-xs font-weight-bold"> Copa do mundo </span>
+                            <span class="text-xs font-weight-bold"> {{$duel->league->name}} </span>
                         </td>
                     </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
