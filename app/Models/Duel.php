@@ -10,11 +10,17 @@ class Duel extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['league_id', 'dateHour', 'clubHome', 'goalHome', 'goalVisit', 'clubVisit'];
+    protected $fillable = ['league_id', 'dateHour', 'home', 'visit'];
 
     public function league()
     {
         return $this->belongsTo(League::class);
     }
+
+    public function scoreboards()
+    {
+        return $this->hasMany(Scoreboard::class);
+    }
+
 
 }

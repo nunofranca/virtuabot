@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Duel;
+namespace App\Http\Requests\Signal;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DuelStoreRequest extends FormRequest
+class SignalStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,8 @@ class DuelStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'league_id' => 'required',
-            'dateHour' => 'required',
-            'home' => 'required|string',
-            'visit' => 'required|string',
+            'home' => 'required|integer',
+            'visit' => 'required|integer',
         ];
     }
 }

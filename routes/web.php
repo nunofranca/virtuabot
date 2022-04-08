@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SignalsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,14 @@ Route::post('/login', [LoginController::class, 'authenticate'])->name('authentic
 
 Route::middleware('auth')->prefix('painel')->group(function (){
     Route::get('/', DashboardController::class)->name('dashboard');
+
+    Route::controller(SignalsController::class)->prefix('sinais')
+        ->name('signals.')
+        ->group(function (){
+            Route::get('/', 'index')->name('index');
+            Route::post('/', 'store')->name('post');
+            Route::put('/{id}', 'update')->name('update');
+        });
 });
 
 

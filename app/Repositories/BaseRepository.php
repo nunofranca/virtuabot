@@ -53,5 +53,8 @@ abstract class BaseRepository
         }
         return $model->delete();
     }
-
+    public function withTrashed()
+    {
+        return $this->model->withTrashed()->get();
+    }
 }

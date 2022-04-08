@@ -16,3 +16,4 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 <!-- CSS Files -->
 <link id="pagestyle" href="{{mix('css/master/material-dashboard.css')}}" rel="stylesheet" />
+<meta name="csrf-token" content="{{ csrf_token() }}">

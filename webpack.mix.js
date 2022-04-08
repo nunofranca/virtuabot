@@ -11,6 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
+
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
@@ -28,8 +29,10 @@ mix.js('resources/js/app.js', 'public/js')
     //dashboard
     .scripts('resources/views/pages/dashboard/assets/js/charts.js', 'public/js/dashboard/js/charts.js')
 
+
+
+    //signal
+    .scripts('resources/views/pages/signal/assets/js/updateStatusSignal.js', 'public/js/signal/js/updateStatusSignal.js')
     //auth
     .copyDirectory('resources/views/auth/assets/images', 'public/images/auth')
-
     .version()
-
