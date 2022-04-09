@@ -24,7 +24,7 @@ class DuelStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'league_id' => 'required',
+            'league_id' => 'required|integer',
             'hour' => 'required',
         ];
     }
