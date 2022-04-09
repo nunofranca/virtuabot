@@ -28,11 +28,9 @@ class DuelsController extends Controller
 
 
 
-    public function store(Request $request)
+    public function store(DuelStoreRequest $request)
     {
-        return $request;
         $attributes = $request->validated();
-        return $attributes;
 
         try {
             return $this->duelService->create($attributes);
