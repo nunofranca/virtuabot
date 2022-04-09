@@ -2,7 +2,7 @@
 
 namespace App\Services\SIgnal;
 
-use App\Repositories\SIgnal\SignalRepositoryInterface;
+use App\Repositories\Signal\SignalRepositoryInterface;
 
 class SignalService implements SignalServiceInterface
 {
@@ -30,6 +30,11 @@ class SignalService implements SignalServiceInterface
     public function udpate($attributes, $id)
     {
         return $this->signalRepository->update($attributes, $id);
+    }
+
+    public function getByStrategy($id)
+    {
+       return $this->signalRepository->getByStrategy($id);
     }
 
 }

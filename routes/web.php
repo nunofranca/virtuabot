@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SignalsController;
+use App\Http\Controllers\StrategiesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,13 @@ Route::middleware('auth')->prefix('painel')->group(function (){
             Route::get('/', 'index')->name('index');
             Route::post('/', 'store')->name('post');
             Route::put('/{id}', 'update')->name('update');
+        });
+    Route::controller(StrategiesController::class)->prefix('estrategia')
+        ->name('strategies.')
+        ->group(function (){
+            Route::get('/', 'index')->name('index');
+            Route::post('/', 'store')->name('post');
+            Route::get('/{id}', 'show')->name('show');
         });
 });
 

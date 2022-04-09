@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Duel;
+namespace App\Http\Requests\Strategy;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DuelStoreRequest extends FormRequest
+class StrategyStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,7 @@ class DuelStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'league_id' => 'required',
-            'hour' => 'required',
+            'name' => 'required|string|unique:strategies'
         ];
     }
 }

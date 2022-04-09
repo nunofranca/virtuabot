@@ -11,4 +11,6 @@ interface SignalServiceInterface
     public function withTrashed();
 
     public function udpate($attributes, $id);
+
+    public function getByStrategy($id);
 }

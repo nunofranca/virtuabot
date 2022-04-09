@@ -13,22 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('duels', function (Blueprint $table) {
+        Schema::create('strategies', function (Blueprint $table) {
             $table->id();
-            $table->integer('league_id');
-            $table->time('hour');
+            $table->string('name');
+            $table->boolean('status') ->default(1);
             $table->softDeletesTz();
             $table->timestampsTz();
         });
     }
 
     /**
-     * Reverse the migrations.bb
+     * Reverse the migrations.
      *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('matchs');
+        Schema::dropIfExists('strategies');
     }
 };

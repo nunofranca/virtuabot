@@ -1,11 +1,15 @@
 @extends('master.index')
-
+@section('content_herder')
+    <div class="d-flex justify-content-between">
+        <p>Placares monitorados da estratégia - {{$strategy->name}}</p>
+        <button type="button" class="btn btn-success mx-3 " data-bs-toggle="modal" data-bs-target="#new-signal">
+            CADASTRAR NOVO SINAL
+        </button>
+    </div>
+@stop
 @section('content')
     <div class="row">
         <div class="col-12">
-{{--            <button type="button" class="btn btn-success mx-3 " data-bs-toggle="modal" data-bs-target="#new-signal">--}}
-{{--                CADASTRAR NOVO SINAL--}}
-{{--            </button>--}}
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div class="bg-success shadow-primary border-radius-lg pt-4 pb-3 d-flex justify-content-between">
@@ -23,8 +27,12 @@
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Placar
                                 </th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    Intervalo
+                                </th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                     Frequencia
                                 </th>
+
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     % Frequencia
                                 </th>
@@ -52,8 +60,12 @@
                                         </div>
                                     </td>
                                     <td>
+                                        <p class="text-xs font-weight-bold mb-0">{{$signal->gap}} minutos</p>
+                                    </td>
+                                    <td>
                                         <p class="text-xs font-weight-bold mb-0">0</p>
                                     </td>
+
                                     <td class="align-middle text-center text-sm">
                                         <span class="text-xs font-weight-bold mb-0">0%</span>
                                     </td>
@@ -80,7 +92,7 @@
             </div>
         </div>
     </div>
-    @include('pages.signal.__partials.new-signal')
+    @include('pages.strategy.__partials.new-signal')
 @stop
 @section('js')
     <script src="{{mix('js/signal/js/updateStatusSignal.js')}}"></script>

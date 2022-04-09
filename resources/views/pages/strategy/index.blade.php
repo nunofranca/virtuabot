@@ -1,15 +1,16 @@
 @extends('master.index')
 
+
 @section('content')
     <div class="row">
         <div class="col-12">
-{{--            <button type="button" class="btn btn-success mx-3 " data-bs-toggle="modal" data-bs-target="#new-signal">--}}
-{{--                CADASTRAR NOVO SINAL--}}
-{{--            </button>--}}
+            <button type="button" class="btn btn-success mx-3 " data-bs-toggle="modal" data-bs-target="#new-strategy">
+                CADASTRAR NOVA ESTRATÉGIA
+            </button>
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div class="bg-success shadow-primary border-radius-lg pt-4 pb-3 d-flex justify-content-between">
-                        <h6 class="text-white text-capitalize ps-3">Placares monitorados</h6>
+                        <h6 class="text-white text-capitalize ps-3">Estratégias cadastradas</h6>
 
                     </div>
                 </div>
@@ -20,10 +21,10 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                             <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Placar
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nome
                                 </th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                    Frequencia
+                                    Placares monitorados
                                 </th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     % Frequencia
@@ -36,18 +37,22 @@
                                     Status
                                 </th>
 
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Sinais
+                                </th>
+
                                 <th class="text-secondary opacity-7"></th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            @foreach($signals as $signal)
+                            @foreach($strategies as $strategy)
                                 <tr>
                                     <td>
                                         <div class="d-flex px-2 py-1">
 
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h5 class="mb-0 text-sm">{{$signal->home}} X {{$signal->visit}}</h5>
+                                                <h5 class="mb-0 text-sm">{{$strategy->name}}</h5>
                                             </div>
                                         </div>
                                     </td>
@@ -64,10 +69,15 @@
                                     <td class="align-middle text-center">
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" name="status" type="checkbox"
-                                                   id="{{$signal->id}}"
-                                                   @if($signal->status) checked @endif>
+                                                   id="{{$strategy->id}}"
+                                                   @if($strategy->status) checked @endif>
                                             <span class="badge badge-sm bg-gradient-success">Online</span>
 
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="form-check form-switch">
+                                            <a type="button" href="{{route('strategies.show', $strategy->id)}}" class="btn badge badge-sm bg-gradient-success mt-4">VER DETALHES</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -80,7 +90,7 @@
             </div>
         </div>
     </div>
-    @include('pages.signal.__partials.new-signal')
+    @include('pages.strategy.__partials.new-strategy')
 @stop
 @section('js')
     <script src="{{mix('js/signal/js/updateStatusSignal.js')}}"></script>

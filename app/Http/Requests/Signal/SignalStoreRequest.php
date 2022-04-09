@@ -24,8 +24,10 @@ class SignalStoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'strategy_id'=> 'required|integer|exists:strategies,id',
             'home' => 'required|integer',
             'visit' => 'required|integer',
+            'gap' => 'required|integer'
         ];
     }
 }

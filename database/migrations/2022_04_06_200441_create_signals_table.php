@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('signals', function (Blueprint $table) {
             $table->id();
+            $table->integer('strategy_id');
             $table->integer('home');
             $table->integer('visit');
+            $table->integer('gap');
             $table->boolean('status')->default(1);
             $table->softDeletesTz();
             $table->timestampsTz();

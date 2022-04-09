@@ -18,6 +18,11 @@
          navbar-scroll="true">
         @include('master.__partials.nav')
     </nav>
+    <div class="mt-3 p-0 mt-4">
+        @yield('content_herder')
+    </div>
+
+
 
     @yield('content')
 </main>

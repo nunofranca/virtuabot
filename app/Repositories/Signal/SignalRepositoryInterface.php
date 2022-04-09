@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\SIgnal;
+namespace App\Repositories\Signal;
 
 interface SignalRepositoryInterface
 {
@@ -11,4 +11,6 @@ interface SignalRepositoryInterface
     public function withTrashed();
 
     public function update($attributes, $id);
+
+    public function getByStrategy($id);
 }
