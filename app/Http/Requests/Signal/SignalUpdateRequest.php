@@ -25,7 +25,10 @@ class SignalUpdateRequest extends FormRequest
     {
 
         return [
-            'status' => 'required|boolean'
+            'status' => 'nullable|boolean',
+            'home' => 'nullable|integer',
+            'visit' => 'nullable|integer',
+            'gap' => 'nullable|integer'
         ];
     }
 }

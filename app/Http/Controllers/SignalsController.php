@@ -42,8 +42,10 @@ class SignalsController extends Controller
     {
         $attributes = $request->validated();
 
+
         try {
-            return $this->signalService->udpate($attributes, $id);
+            $this->signalService->udpate($attributes, $id);
+            return redirect()-> back();
         } catch (\Exception $exception) {
             return response()->json($exception->getMessage());
         }

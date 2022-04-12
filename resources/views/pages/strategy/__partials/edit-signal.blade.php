@@ -10,6 +10,7 @@
             <div class="modal-body">
                 <form method="post" name="editSignal">
                     @csrf
+                    @method('put')
 
                     <div class="form-group">
                         <label for="strategy_id">Estratégia</label>

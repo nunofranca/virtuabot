@@ -116,16 +116,19 @@
         const edits = document.querySelectorAll("button[data-type='edit']")
 
         for (let i = 0; i < edits.length; i++) {
+
             edits[i].addEventListener('click', function (){
+
                 signal(this.getAttribute('data-id'))
                     .then(res => res.json())
                     .then(res => {
-                        const form = document.querySelector("input[name='editSignal']")
+                        const form = document.querySelector("form[name='editSignal']")
                         const idHome = document.querySelector("#home");
                         const idVisit = document.querySelector("#visit");
                         const idGap = document.querySelector("#gap");
 
-                        // form.setAttribute('action', 'signal/3')
+
+                        form.setAttribute('action', `/painel/sinais/${res.id}`)
                         idHome.value = res.home
                         idVisit.value = res.visit
                         idGap.value = res.gap
