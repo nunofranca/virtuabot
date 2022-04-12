@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Signal\SignalStoreRequest;
 use App\Http\Requests\Signal\SignalUpdateRequest;
-use App\Services\SIgnal\SignalServiceInterface;
+use App\Services\Signal\SignalServiceInterface;
 use Illuminate\Http\Request;
 
 class SignalsController extends Controller
@@ -49,5 +49,10 @@ class SignalsController extends Controller
         }
     }
 
+    public function getById($id)
+    {
+        return $this->signalService->getById($id);
+
+    }
 
 }

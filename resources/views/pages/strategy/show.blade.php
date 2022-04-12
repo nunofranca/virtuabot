@@ -43,6 +43,9 @@
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     Status
                                 </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Açoes
+                                </th>
 
                                 <th class="text-secondary opacity-7"></th>
                             </tr>
@@ -79,7 +82,17 @@
                                                    id="{{$signal->id}}"
                                                    @if($signal->status) checked @endif>
                                             <span class="badge badge-sm bg-gradient-success">Online</span>
-
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="form-check form-switch mt-3">
+                                            <div class="btn-group">
+                                                <button data-id="{{$signal->id}}" data-type="edit"
+                                                        class="btn btn-warning text-white active"
+                                                        aria-current="page">Editar
+                                                </button>
+                                                <a href="#" class="btn btn-danger">Excluir</a>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -92,9 +105,47 @@
             </div>
         </div>
     </div>
+    @include('pages.strategy.__partials.edit-signal')
     @include('pages.strategy.__partials.new-signal')
 @stop
 @section('js')
     <script src="{{mix('js/signal/js/updateStatusSignal.js')}}"></script>
+
+    <script>
+
+        const edits = document.querySelectorAll("button[data-type='edit']")
+
+        for (let i = 0; i < edits.length; i++) {
+            edits[i].addEventListener('click', function (){
+                signal(this.getAttribute('data-id'))
+                    .then(res => res.json())
+                    .then(res => {
+                        const form = document.querySelector("input[name='editSignal']")
+                        const idHome = document.querySelector("#home");
+                        const idVisit = document.querySelector("#visit");
+                        const idGap = document.querySelector("#gap");
+
+                        // form.setAttribute('action', 'signal/3')
+                        idHome.value = res.home
+                        idVisit.value = res.visit
+                        idGap.value = res.gap
+                        const editSignal = new bootstrap.Modal(document.querySelector('#edit-signal'))
+                        editSignal.toggle()
+
+
+                    })
+            })
+
+        }
+
+        function signal(id) {
+            return fetch(`/api/signal/${id}`)
+
+        }
+    </script>
+
+    <script>
+
+    </script>
 @stop
 

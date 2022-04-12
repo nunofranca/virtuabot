@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\SIgnal;
+namespace App\Services\Signal;
 
 use App\Repositories\Signal\SignalRepositoryInterface;
 
@@ -37,4 +37,8 @@ class SignalService implements SignalServiceInterface
        return $this->signalRepository->getByStrategy($id);
     }
 
+    public function getById($id)
+    {
+        return $this->signalRepository->getById($id);
+    }
 }

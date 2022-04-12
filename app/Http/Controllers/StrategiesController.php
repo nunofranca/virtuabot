@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Strategy\StrategyStoreRequest;
-use App\Services\SIgnal\SignalServiceInterface;
+use App\Services\Signal\SignalServiceInterface;
 use App\Services\Strategy\StrategyServiceInterface;
 use Illuminate\Http\Request;
 

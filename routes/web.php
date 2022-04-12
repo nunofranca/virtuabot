@@ -30,6 +30,7 @@ Route::middleware('auth')->prefix('painel')->group(function (){
             Route::get('/', 'index')->name('index');
             Route::post('/', 'store')->name('post');
             Route::put('/{id}', 'update')->name('update');
+            Route::get('/{id}/edit', 'edit')->name('edit');
         });
     Route::controller(StrategiesController::class)->prefix('estrategia')
         ->name('strategies.')

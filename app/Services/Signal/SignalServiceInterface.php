@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\SIgnal;
+namespace App\Services\Signal;
 
 interface SignalServiceInterface
 {
@@ -13,4 +13,6 @@ interface SignalServiceInterface
     public function udpate($attributes, $id);
 
     public function getByStrategy($id);
+
+    public function getById($id);
 }

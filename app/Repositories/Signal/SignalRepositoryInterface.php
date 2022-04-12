@@ -13,4 +13,6 @@ interface SignalRepositoryInterface
     public function update($attributes, $id);
 
     public function getByStrategy($id);
+
+    public function getById($id);
 }
