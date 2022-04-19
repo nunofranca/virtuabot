@@ -15,7 +15,7 @@ class ExampleTest extends DuskTestCase
      */
     public function testBasicExample()
     {
-        dd(env('DUSK_DRIVER_URL'));
+
         $this->browse(function (Browser $browser) {
             $browser->visit('/');
 //                ->waitFor('.vr-ResultsNavBarButton')

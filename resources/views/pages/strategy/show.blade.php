@@ -117,6 +117,7 @@
 
         for (let i = 0; i < edits.length; i++) {
 
+
             edits[i].addEventListener('click', function (){
 
                 signal(this.getAttribute('data-id'))
@@ -142,6 +143,7 @@
         }
 
         function signal(id) {
+
             return fetch(`/api/signal/${id}`)
 
         }
