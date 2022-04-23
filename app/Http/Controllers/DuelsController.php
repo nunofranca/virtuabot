@@ -27,12 +27,12 @@ class DuelsController extends Controller
     }
 
 
-
     public function store(DuelStoreRequest $request)
     {
         $attributes = $request->validated();
 
         try {
+
             return $this->duelService->create($attributes);
 
         } catch (\Exception $e) {

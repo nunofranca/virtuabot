@@ -10,7 +10,7 @@ class Duel extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['league_id', 'dateHour', 'hour'];
+    protected $fillable = ['league_id', 'dateHour', 'hour', 'home', 'visit'];
 
     public function league()
     {

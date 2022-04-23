@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('duels', function (Blueprint $table) {
             $table->id();
             $table->integer('league_id');
+            $table->string('home');
+            $table->string('visit');
             $table->time('hour', $precision = 0);
             $table->softDeletesTz();
             $table->timestampsTz();
