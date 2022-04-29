@@ -26,7 +26,7 @@ class ScoreboardService implements ScoreboardServiceInterface
 
     public function create($attributes)
     {
-        return $attributes;
+        return '44';
         $this->scoreboardRepository->create($attributes);
     }
 }
