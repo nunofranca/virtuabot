@@ -19,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::post('/duel',[DuelsController::class, 'store']);
 
 Route::get('/signal/{id}', [SignalsController::class, 'getById']);
+
+Route::post('/scoreboards', [SignalsController::class, 'store']);

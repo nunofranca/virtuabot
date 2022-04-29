@@ -24,7 +24,7 @@ class ScoreboardStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'result' => 'string|required'
         ];
     }
 }
