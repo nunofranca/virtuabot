@@ -26,8 +26,8 @@ class DuelStoreRequest extends FormRequest
         return [
             'league_id' => 'required|integer',
             'home' => 'required|string',
-            'visit' => 'required|string',
-            'hour' => 'required',
+            //'visit' => 'required|string',
+           // 'hour' => 'required',
         ];
     }
 }
