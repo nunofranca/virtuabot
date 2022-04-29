@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DuelsController;
+use App\Http\Controllers\ScoreboardsController;
 use App\Http\Controllers\SignalsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,4 +21,4 @@ Route::post('/duel',[DuelsController::class, 'store']);
 
 Route::get('/signal/{id}', [SignalsController::class, 'getById']);
 
-Route::post('/scoreboards', [SignalsController::class, 'store']);
+Route::post('/scoreboards', [ScoreboardsController::class, 'store']);
