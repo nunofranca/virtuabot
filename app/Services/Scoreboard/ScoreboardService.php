@@ -46,9 +46,6 @@ class ScoreboardService implements ScoreboardServiceInterface
 //            'duel_id' =>
 //        ];
 
-
-
-
         $attributes = [
             'duel_id'
         ];
