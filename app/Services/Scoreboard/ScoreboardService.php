@@ -3,14 +3,17 @@
 namespace App\Services\Scoreboard;
 
 use App\Repositories\Scoreboard\ScoreboardRepositoryInterface;
+use App\Services\Duel\DuelServiceInterface;
 
 class ScoreboardService implements ScoreboardServiceInterface
 {
     private ScoreboardRepositoryInterface $scoreboardRepository;
+    private DuelServiceInterface $duelService;
 
-    public function __construct(ScoreboardRepositoryInterface $scoreboardRepository)
+    public function __construct(ScoreboardRepositoryInterface $scoreboardRepository, DuelServiceInterface $duelService)
     {
         $this->scoreboardRepository = $scoreboardRepository;
+        $this->duelService = $duelService;
     }
 
 
@@ -28,6 +31,27 @@ class ScoreboardService implements ScoreboardServiceInterface
     {
         $result = explode(' - ', $attributes['result']);
         $leagueHour = explode(' - ', $attributes['leagueHour']);
+
+
+        $league = $leagueHour[0];
+        $hour = $leagueHour[1];
+        $home = $result[0];
+        $visit = $result[1];
+
+        $duel = $this->duelService->getByHourAndLeague($attributes);
+        return $duel;
+
+        $attributes = [
+            'duel_id' =>
+        ];
+
+
+
+
+        $attributes = [
+            'duel_id'
+        ];
+
         return $leagueHour;
         $this->scoreboardRepository->create($attributes);
     }

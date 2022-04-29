@@ -37,4 +37,12 @@ class DuelService implements DuelServiceInterface
     {
         return $this->duelRepository->nextDuels();
     }
+
+    public function getByHourAndLeague($attributes)
+    {
+        $this->duelRepository->getByHourAndLeague($attributes);
+    }
+
+
+
 }

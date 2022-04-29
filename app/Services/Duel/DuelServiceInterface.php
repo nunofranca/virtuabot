@@ -13,4 +13,6 @@ interface DuelServiceInterface
     public function update($attributes, $id);
 
     public function nextDuels();
+
+    public function getByHourAndLeague($attributes);
 }
