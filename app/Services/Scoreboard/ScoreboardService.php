@@ -31,16 +31,15 @@ class ScoreboardService implements ScoreboardServiceInterface
     {
 
         $result = explode(' - ', $attributes['result']);
-        return $result[0] ;
-        $leagueHour = explode(' - ', $attributes['leagueHour']);
 
+        $leagueHour = explode(' - ', $attributes['leagueHour']);
 
         $league = $leagueHour[0];
         $hour = $leagueHour[1];
         $home = $result[0];
         $visit = $result[1];
 
-        $duel = $this->duelService->getByHourAndLeague($attributes);
+        $duel = $this->duelService->getByHourAndLeague(['hour' => $hour]);
         return $duel;
 
 //        $attributes = [

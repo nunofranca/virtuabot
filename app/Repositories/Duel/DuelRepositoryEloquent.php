@@ -20,7 +20,7 @@ class DuelRepositoryEloquent extends BaseRepository implements DuelRepositoryInt
     public function getByHourAndLeague($attributes)
     {
         return Duel::where('hour', $attributes['hour'])
-            ->where('league', $attributes['league'])
+//            ->where('league', $attributes['league'])
             ->ordeByDesc('id')
             ->first();
     }
