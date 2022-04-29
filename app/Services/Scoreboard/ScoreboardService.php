@@ -31,7 +31,7 @@ class ScoreboardService implements ScoreboardServiceInterface
     {
 
         $result = explode(' - ', $attributes['result']);
-        return $result;
+        return $result[0] ;
         $leagueHour = explode(' - ', $attributes['leagueHour']);
 
 
