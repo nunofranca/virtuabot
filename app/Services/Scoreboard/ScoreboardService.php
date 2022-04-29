@@ -41,9 +41,9 @@ class ScoreboardService implements ScoreboardServiceInterface
         $duel = $this->duelService->getByHourAndLeague($attributes);
         return $duel;
 
-        $attributes = [
-            'duel_id' =>
-        ];
+//        $attributes = [
+//            'duel_id' =>
+//        ];
 
 
 
