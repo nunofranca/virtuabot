@@ -29,9 +29,9 @@ class ScoreboardService implements ScoreboardServiceInterface
 
     public function create($attributes)
     {
-        return $attributes;
-        $result = explode(' - ', $attributes['result']);
 
+        $result = explode(' - ', $attributes['result']);
+        return $result;
         $leagueHour = explode(' - ', $attributes['leagueHour']);
 
 
