@@ -26,7 +26,7 @@ class ScoreboardService implements ScoreboardServiceInterface
 
     public function create($attributes)
     {
-        $result = explode('-', $attributes['result']);
+        $result = explode(' - ', $attributes['result']);
         return $result;
         $this->scoreboardRepository->create($attributes);
     }
