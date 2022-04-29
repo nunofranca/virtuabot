@@ -13,7 +13,7 @@ class ScoreboardStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class ScoreboardStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'result' => 'string|required'
+            'result' => 'string|required',
+            'leagueHour' => 'string|required'
         ];
     }
 }
