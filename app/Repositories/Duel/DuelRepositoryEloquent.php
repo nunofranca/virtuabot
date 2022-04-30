@@ -21,7 +21,7 @@ class DuelRepositoryEloquent extends BaseRepository implements DuelRepositoryInt
     {
         return Duel::where('hour', $attributes['hour'])
 //            ->where('league', $attributes['league'])
-            ->ordeByDesc('id')
+            ->orderByDesc('id')
             ->first();
     }
 
