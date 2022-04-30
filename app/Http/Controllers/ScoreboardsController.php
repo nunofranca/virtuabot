@@ -17,7 +17,7 @@ class ScoreboardsController extends Controller
     public function store(ScoreboardStoreRequest $request)
     {
         $attributes = $request->validated();
-        return $attributes;
+
         try {
             return $this->scoreboardService->create($attributes);
         } catch (\Exception $exception) {
