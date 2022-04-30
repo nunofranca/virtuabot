@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 
+use App\Services\ApiTelegram\TelegramService;
+use App\Services\ApiTelegram\TelegramServiceInterface;
 use App\Services\League\LeagueService;
 use App\Services\League\LeagueServiceInterface;
 use App\Services\Duel\DuelService;
@@ -24,6 +26,7 @@ class ServiceServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(TelegramServiceInterface::class, TelegramService::class);
         $this->app->bind(StrategyServiceInterface::class, StrategyService::class);
         $this->app->bind(ScoreboardServiceInterface::class, ScoreboardService::class);
         $this->app->bind(SignalServiceInterface::class, SignalService::class);
