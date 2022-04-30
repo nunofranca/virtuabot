@@ -3,9 +3,6 @@
 namespace App\Services\Duel;
 
 use App\Repositories\Duel\DuelRepositoryInterface;
-use App\Services\ApiTelegram\TelegramService;
-use App\Services\ApiTelegram\TelegramServiceInterface;
-use TelegramBot\Api\BotApi;
 
 class DuelService implements DuelServiceInterface
 {
@@ -13,7 +10,7 @@ class DuelService implements DuelServiceInterface
 
     public function __construct(DuelRepositoryInterface $duelRepository)
     {
-        $this->duelRepository = $duelRepository;
+        return $this->duelRepository = $duelRepository;
 
     }
 
