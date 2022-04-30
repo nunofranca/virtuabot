@@ -10,12 +10,11 @@ use TelegramBot\Api\BotApi;
 class DuelService implements DuelServiceInterface
 {
     private DuelRepositoryInterface $duelRepository;
-    private TelegramServiceInterface $telegramService;
 
-    public function __construct(DuelRepositoryInterface $duelRepository, TelegramServiceInterface $telegramService)
+    public function __construct(DuelRepositoryInterface $duelRepository)
     {
         $this->duelRepository = $duelRepository;
-        $this->telegramService = $telegramService;
+
     }
 
     public function getAll()
@@ -26,9 +25,6 @@ class DuelService implements DuelServiceInterface
     public function create($attributes)
     {
         $this->duelRepository->create($attributes);
-
-        return $this->telegramService->sendMessage('Duelo Cadastrado - '. $attributes['hour']);
-
 
     }
 
