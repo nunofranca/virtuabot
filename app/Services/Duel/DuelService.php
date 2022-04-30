@@ -21,7 +21,7 @@ class DuelService implements DuelServiceInterface
 
     public function create($attributes)
     {
-        $this->duelRepository->create($attributes);
+       return $this->duelRepository->create($attributes);
 
     }
 
